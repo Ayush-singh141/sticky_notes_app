@@ -95,28 +95,6 @@ let note = {
 function startDragging(event) {
     const isTouch = event.type === 'touchstart';
     const target = isTouch ? event.touches[0] : event;
-    /*
-     *The line:
-
-const target = isTouch ? event.touches[0] : event;
-
-is a conditional (ternary) expression that assigns a value to the variable target depending on whether the event is a touch event or a mouse event.
-
-isTouch: This variable is a boolean that checks whether the event is a touch event (true if it's a touch event, false if it's a mouse event).
-
-event.touches[0]: This is used when handling touch events. The touches array contains all touch points (fingers) currently on the screen. touches[0] refers to the first touch point. For example, on mobile devices, when you drag or move with one finger, touches[0] provides information about the first finger's position (e.g., its clientX and clientY).
-
-event: This refers to the event object in mouse events (like mousedown, mousemove, etc.), which contains information such as the mouse's current position (clientX, clientY).
-
-
-In summary:
-
-If the event is a touch event, the variable target is assigned the first touch point (event.touches[0]).
-
-
-
-*/
-     */
     if (event.target.classList.contains('note')) {
         cursor = {
             x: target.clientX,
